@@ -21,7 +21,7 @@ const useHomeStore = defineStore('home', {
       const res = await getHomeCategories();
       this.categories = res.data;
     },
-    async fetchHouseListDara() {
+    async fetchHouseListData() {
       const res = await getHomeHouseList(this.currentPage++);
       this.houseList.push(...res.data);
     },

@@ -2,7 +2,7 @@
   <div class="house-item">
     <div class="item-inner">
       <div class="cover">
-        <img :src="itemData.image.url" alt="" />
+        <img :src="itemData.image?.url" alt="" />
       </div>
       <div class="info">
         <div class="location">
@@ -15,7 +15,7 @@
           <div class="new">¥ {{ itemData.finalPrice }}</div>
           <div class="old">¥ {{ itemData.productPrice }}</div>
           <div class="tip" v-if="itemData.priceTipBadge">
-            {{ itemData.priceTipBadge.text }}
+            {{ itemData?.priceTipBadge?.text }}
           </div>
         </div>
       </div>
