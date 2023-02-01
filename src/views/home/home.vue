@@ -5,7 +5,9 @@
       <img src="@/assets/img/home/banner.webp" alt="" />
     </div>
     <homeSearchBox />
-    <!-- <div v-if="showMassage">woshi xinxi</div> -->
+    <div class="search-bar" v-if="showMassage">
+      <searchBar />
+    </div>
     <home-categories />
     <homeContent />
   </div>
@@ -19,6 +21,7 @@ import homeSearchBox from './components/home-search-box.vue';
 import homeCategories from './components/home-categories.vue';
 import homeContent from './components/home-content.vue';
 import useScorll from '@/hooks/useScorll';
+import searchBar from '@/components/search-bar/search-bar.vue';
 
 const homeStore = useHomeStore();
 homeStore.fetchHotSuggestData();
@@ -43,9 +46,9 @@ watch(isReachBottom, (newValue) => {
 //   showMassage.value = newTop > 100;
 // });
 
-// const showMassage = computed(() => {
-//   return scrollTop.value >= 100;
-// });
+const showMassage = computed(() => {
+  return scrollTop.value >= 360;
+});
 </script>
 
 <style lang="less" scoped>
@@ -60,6 +63,17 @@ watch(isReachBottom, (newValue) => {
     img {
       width: 100%;
     }
+  }
+
+  .search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    padding: 16px 16px 10px;
+    z-index: 9;
+    background-color: #fff;
   }
 }
 </style>
