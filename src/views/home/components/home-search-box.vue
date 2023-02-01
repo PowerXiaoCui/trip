@@ -234,7 +234,7 @@ const searchBtnClick = () => {
     font-size: 18px;
     // line-height: 38px;
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid #000;
     border-radius: 20px;
     color: #fff;
     background-image: var(--theme-linear-gradient);
